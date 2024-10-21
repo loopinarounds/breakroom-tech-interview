@@ -1,0 +1,11 @@
+{
+  "name": "breakroom-quiz",
+  "version": "1.0.0",
+  "description": "Score submitted quizes against set criteria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bradley Weaver",
+  "license": "ISC"
+}
