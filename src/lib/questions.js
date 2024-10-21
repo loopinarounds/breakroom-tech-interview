@@ -13,8 +13,7 @@ export const questions = [
 ];
 
 
-// will always convert to lowercase for comparison to avoid miss-scoring
+// will always convert to lowercase for comparison to avoid miss-scoring. 
 export const answers = {
     positive: ["yes", "y"],
-    negative: ["no", "n",]
 };

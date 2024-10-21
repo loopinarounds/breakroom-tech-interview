@@ -1,0 +1,64 @@
+import {questions, answers} from './questions.js';
+import { calculateContractedHours } from './calculateContractedHours.js';
+import { calculateMinimumWage } from './calculateMinimumWage.js';
+
+
+
+
+export function calculatePoints(data){
+    // early return if no data
+    if(!data) return 0;
+
+    let points = 0;
+    let totalAvailable = 0;
+
+    // initialise points and total and loop through the questions - caluclate points based off of the answers.
+    // If no answer we continue the loop and don't iterate available score.
+    for (const question of questions) {
+
+
+        // if the answer is a string, convert to lowercase for comparison to avoid miss-scoring.
+        const answer = typeof data[question] ==='string' ? data[question].toLowerCase() : data[question];
+
+        if(!answer || answer==="unsure") continue;
+        switch (question) {
+            case "enjoys_job":
+                if (answers.positive.includes(answer)) {
+                    points += 1;
+                } 
+                break;
+            case "respected_by_managers":
+                if (answers.positive.includes(answer)) {
+                    points += 1;
+                }
+                break;
+            case "good_for_carers":
+                if (answers.positive.includes(answer)) {
+                    points += 1;
+                } 
+                break;
+            case "contracted_hours":
+                if(calculateContractedHours(data["contracted hours"], data["hours actually worked"])){
+                    points += 1;
+                }
+                break;   
+            case "unpaid_extra_work":
+                if (answers.positive.includes(answer)) {
+                    points += 1;
+                }
+                break;
+            case "age":
+                const minWage = calculateMinimumWage(data["age"]);
+                if(!minWage) continue;
+                if(data["hourly rate"] >= minWage){
+                    points += 1;
+                }
+                break;
+            default:
+                break;
+        }
+        totalAvailable++;
+    }
+
+    return {points, totalAvailable};
+}

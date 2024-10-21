@@ -1,7 +1,7 @@
 export function calculateMinimumWage(age) {
 
     // return null if no age provided or if age is negative so we do not award any points  
-    if( age < 0 || typeof age !== "number") return null;
+    if( typeof age !== "number" || age <= 0 ) return null;
     
     switch (true) {
         case (age>0 && age < 18):
