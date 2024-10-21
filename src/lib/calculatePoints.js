@@ -26,27 +26,33 @@ export function calculatePoints(data){
         if(!answer || answer==="unsure") continue;
         switch (question) {
             case "enjoys_job":
+                
                 if (answers.positive.includes(answer)) {
+                    console.log("enjoys job, awarding point");
                     points += 1;
                 } 
                 break;
             case "respected_by_managers":
                 if (answers.positive.includes(answer)) {
+                    console.log("respected by managers, awarding point");
                     points += 1;
                 }
                 break;
             case "good_for_carers":
                 if (answers.positive.includes(answer)) {
+                    console.log("good for carers, awarding point");
                     points += 1;
                 } 
                 break;
             case "contracted_hours":
                 if(calculateContractedHours(data["contracted_hours"], data["hours_actually_worked"])){
+                    console.log("contracted hours match, awarding point");
                     points += 1;
                 }
                 break;   
             case "unpaid_extra_work":
                 if (!answers.positive.includes(answer)) { // if the answer is not positive, award a point
+                    console.log("No unpaid extra work, awarding point");
                     points += 1;
                 }
                 break;
@@ -54,6 +60,7 @@ export function calculatePoints(data){
                 const minWage = calculateMinimumWage(data["age"]);
                 if(!minWage) continue;
                 if(data["hourly_rate"] >= minWage){
+                    console.log("meets minimum wage, awarding point");
                     points += 1;
                 }
                 break;

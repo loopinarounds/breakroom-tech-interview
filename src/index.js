@@ -1,5 +1,5 @@
 import { calculatePoints } from "./lib/calculatePoints.js";
-import { readFile } from "./utils/readFile.js";
+import { readFile } from "./lib/readFile.js";
 
 
 function handleQuiz() {

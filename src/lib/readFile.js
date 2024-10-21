@@ -13,13 +13,13 @@ export function readFile() {
     const filePath = path.resolve(args[0]); 
     console.log("Reading file from path:", filePath);
 
-    return fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) {
-                console.error("Error reading the file:", err);
-                reject(err); 
-                return;
-            }
-            const quizData = JSON.parse(data); 
-            resolve(quizData);
-        });
+    const data = fs.readFileSync(filePath, 'utf8');
+
+  
+    try {
+        return JSON.parse(data);
+    } catch (e) {
+        console.error("Error parsing JSON data:", e.message);
+        process.exit(1);
+    }
     }
