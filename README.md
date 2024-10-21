@@ -1,6 +1,6 @@
 # breakroom-tech-interview
 
-A simple javascript project that scores quiz answers read from a json file.\ 
+A simple javascript project that scores quiz answers read from a json file.
 
 
 # Explanation 
@@ -18,7 +18,7 @@ The total available score is an accumulation of the answers they provide - any o
 
 # Instructions
 
-To run, ```npm run start``` Or to use a custom json: ```node src/index.js FILEPATH ```
+To run, ```npm run start```\ Or to use a custom json: ```node src/index.js FILEPATH ```
 
 
 
