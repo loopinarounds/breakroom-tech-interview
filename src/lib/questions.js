@@ -5,10 +5,10 @@ export const questions = [
     "respected_by_managers",
     "good_for_carers",
     "contracted_hours",
-    "hours_actually_worked",
+    // "hours_actually_worked", - negating this question as it is related to the contracted_hours question
     "unpaid_extra_work",
     "age",
-    "hourly_rate",
+    // "hourly_rate", - negating this question as it is related to the age question
     "submitted_date"
 ];
 

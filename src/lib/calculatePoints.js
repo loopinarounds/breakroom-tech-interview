@@ -17,8 +17,11 @@ export function calculatePoints(data){
     for (const question of questions) {
 
 
+
         // if the answer is a string, convert to lowercase for comparison to avoid miss-scoring.
         const answer = typeof data[question] ==='string' ? data[question].toLowerCase() : data[question];
+
+    
 
         if(!answer || answer==="unsure") continue;
         switch (question) {
@@ -38,19 +41,19 @@ export function calculatePoints(data){
                 } 
                 break;
             case "contracted_hours":
-                if(calculateContractedHours(data["contracted hours"], data["hours actually worked"])){
+                if(calculateContractedHours(data["contracted_hours"], data["hours_actually_worked"])){
                     points += 1;
                 }
                 break;   
             case "unpaid_extra_work":
-                if (answers.positive.includes(answer)) {
+                if (!answers.positive.includes(answer)) { // if the answer is not positive, award a point
                     points += 1;
                 }
                 break;
             case "age":
                 const minWage = calculateMinimumWage(data["age"]);
                 if(!minWage) continue;
-                if(data["hourly rate"] >= minWage){
+                if(data["hourly_rate"] >= minWage){
                     points += 1;
                 }
                 break;
