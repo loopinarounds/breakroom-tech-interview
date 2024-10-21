@@ -3,7 +3,7 @@
 A simple javascript project that scores quiz answers read from a json file.\ 
 
 
-#Explanation 
+# Explanation 
 
 Points are awarded to a candidate answering if:\
 ○ Enjoy their job\
