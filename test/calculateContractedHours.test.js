@@ -1,4 +1,4 @@
-import { calculateContractedHours } from '../src/lib/calculateContractedHours';
+import { calculateContractedHours } from '../utils/calculateContractedHours';
 
 describe('calculateContractedHours', () => {
     test('returns false if contracted hours are not set', () => {

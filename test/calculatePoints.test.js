@@ -1,4 +1,4 @@
-import { calculatePoints } from '../src/lib/calculatePoints.js';
+import { calculatePoints } from '../utils/calculatePoints.js';
 
 describe('calculatePoints', () => {
     test('returns 0 if no data is provided', () => {

@@ -1,4 +1,4 @@
-import { calculateMinimumWage } from '../src/lib/calculateMinimumWage.js';
+import { calculateMinimumWage } from '../utils/calculateMinimumWage.js';
 
 describe('calculateMinimumWage', () => {
     test('returns null if no age is provided', () => {
